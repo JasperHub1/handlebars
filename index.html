@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Handlebars</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header id="main-header">
+      <h1>Handlebars</h1>
+    </header>
+
+    <section id="main-content"></section>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination-wrapper">
+      <div class="pagination justify-content-center"></div>
+    </div>
+
+
+  </div>
+
+  <!-- course template -->
+  <script id="course-template" type="text/x-handlebars-template">
+
+    <div class="card-wrapper">
+      <div class="card-deck">
+        {{#each this}}
+          <div class="card my-3" id="{{id}}" title="{{title}}" data-toggle="modal" data-target="#exampleModal">
+              <img class="card-img-top" src="{{image}}" alt="card-img">
+              <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{subtitle}}</p>
+              </div>
+              <div class="card-footer">
+                <p class="timespan {{#islong timespan}} long {{else}} short {{/islong}}">{{timespan}}</p>
+              </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+  </script>
+
+
+  <!-- chapter template -->
+  <script id="chapter-template" type="text/x-handlebars-template">
+    <ul>
+      <h2>{{title}}</h2>
+      {{#each data}}
+      <li>
+        <h3 class="chapter-title" title="{{title}}">{{title}}</h3>
+        <ul class="chapter-subtitle">
+            {{#each subTitle}}
+          <li>
+            <h4 class="chapter-subtitle-item" title="{{title}}">{{title}}</h4>
+            <span class="chapter-timespan">( {{timespan}} )</span>
+          </li>
+          {{/each}}
+        </ul>
+      </li>
+      {{/each}}
+    </ul>
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+    crossorigin="anonymous"></script>
+
+  <script src="js/handlebars-v4.0.11.js"></script>
+  <script src="js/page.js"></script>
+  <script src="js/script.js"></script>
+
+
+
+  </script>
+
+
+</body>
+
+</html>

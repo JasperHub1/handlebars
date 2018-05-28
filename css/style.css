@@ -1,0 +1,141 @@
+/*--------------------
+-----Main Styles------
+----------------------*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* This defines what 1rem is */
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-dark);
+  font-weight: 300;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/*--------------------
+-----Content Styles------
+----------------------*/
+
+
+#main-header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #eee;
+}
+
+#main-content {
+  border: 1px solid #eee;
+  padding: 2rem 0 2rem 0;
+}
+
+.card-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: #81aae7;
+  font-size: 1.4rem;
+  font-weight: 600;
+  max-width: 85%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #795e4c;
+}
+
+.timespan {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.long {
+  color: rgb(99, 155, 99);
+}
+
+.short {
+  color: rgb(179, 146, 58);
+}
+
+.pagination-wrapper {
+  padding: 15px 20px;
+  font-size: 1.6rem;
+}
+
+.modal-body {
+  padding: 1rem 3rem;
+}
+
+.modal-body ul {
+  list-style: none;
+}
+
+.chapter-title {
+  color: blue;
+  margin-top: 22px;
+}
+
+.chapter-subtitle {
+  margin-left: 2rem;
+}
+
+.chapter-subtitle-item {
+  display: inline-block;
+}
+
+.chapter-timespan {
+  float: right;
+}
+
+@media (min-width: 0) {
+  .card-deck .card {
+    flex: 0 0 100%;
+  }
+}
+@media (min-width: 576px) {
+  .card-deck .card {
+    flex: 0 0 calc(50% - 4rem);
+  }
+}
+@media (min-width: 768px) {
+  .card-deck .card {
+    flex: 0 0 calc(33.333333% - 4rem);
+  }
+}
